@@ -310,7 +310,6 @@ class Fixture
                 "Invalid fixture: $fixture, please ensure this file returns an array of data.",
                 1
             );
-            
         }
 
         $this->fixtures[$tableName] = $this->driver->buildRecords($tableName, $records);
