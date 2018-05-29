@@ -171,11 +171,11 @@ class Eloquent extends BaseDriver implements DriverInterface
         $pivotColumns = explode('|', $relatedRecord);
         $relatedRecordName = array_shift($pivotColumns);
 
-        $foreignKeyPieces = explode('.', $relation->getForeignKey());
+        $foreignKeyPieces = explode('.', $relation->getQualifiedForeignPivotKeyName());
         $foreignKeyName = $foreignKeyPieces[1];
         $foreignKeyValue = $this->generateKey($recordName);
 
-        $otherKeyPieces = explode('.', $relation->getOtherKey());
+        $otherKeyPieces = explode('.', $relation->getQualifiedRelatedPivotKeyName());
         $otherKeyName = $otherKeyPieces[1];
         $otherKeyValue = $this->generateKey($relatedRecordName);
         
